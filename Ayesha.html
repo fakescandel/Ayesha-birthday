@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Ayesha</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to top right, #ffe6f0, #e0f7fa);
+      color: #4a4a4a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d6336c;
+      margin-bottom: 0.5em;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeIn 3s ease-in-out 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff6b81;
+      transform: rotate(45deg);
+      animation: floatUp 8s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff6b81;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    audio {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts">
+    <!-- Floating hearts -->
+    <div class="heart" style="left:10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left:30%; animation-delay: 2s;"></div>
+    <div class="heart" style="left:50%; animation-delay: 4s;"></div>
+    <div class="heart" style="left:70%; animation-delay: 1s;"></div>
+    <div class="heart" style="left:90%; animation-delay: 3s;"></div>
+  </div>
+
+  <h1>Happy Birthday, Ayesha 🎉</h1>
+  <p>Live a happy life.</p>
+
+  <audio autoplay loop>
+    <source src="your-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
